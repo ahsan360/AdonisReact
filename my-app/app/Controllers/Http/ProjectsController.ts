@@ -1,6 +1,7 @@
 "use strict";
 
 import Project from "App/Models/Project";
+import User from "App/Models/User";
 class ProjectController {
   async index({ request, response }) {}
 
@@ -9,6 +10,17 @@ class ProjectController {
   async store({ request, response }) {
     const name = request.all();
     const project = await Project.create(name);
+    const user1 = await User.findOrFail(1);
+    const user2 = await User.findOrFail(2);
+    console.log(user1,user2)
+    await project.related("users").attach({
+      [user1.id]: {
+        role_id: 1,
+      },
+      [user2.id]: {
+        role_id: 2,
+      },
+    });
     return response.json({ project });
   }
 

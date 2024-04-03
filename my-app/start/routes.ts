@@ -24,5 +24,6 @@ Route.get("/api", "DataController.index");
 Route.resource("projects", "ProjectsController");
 Route.resource("valid", "ValidationsController");
 Route.get("/getproject", "ProjectsController.getProject");
+Route.post("/testuser", "UsersController.store");
 
 
