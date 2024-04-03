@@ -20,4 +20,3 @@
 import { HttpContext } from "@adonisjs/core/build/standalone";
 import Route from "@ioc:Adonis/Core/Route";
 Route.get("/te", () => "ge");
-Route.get("/tde", () => "df");
