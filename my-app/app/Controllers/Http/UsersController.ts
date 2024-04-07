@@ -4,10 +4,8 @@ import Database from "@ioc:Adonis/Lucid/Database";
 import User from "App/Models/User";
 
 export default class UsersController {
-  async index({ request, response }) {
-    await Database.insertQuery()
-      .table("users")
-      .insert({ username: "virk", email: "virk@adonisjs.com" });
+  async index({ request, response }) { 
+    const users = User.query().where('age','>',18).orderBy()
   }
 
   async show({ params, request, response }) {}
