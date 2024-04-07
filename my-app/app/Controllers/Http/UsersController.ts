@@ -5,8 +5,14 @@ import User from "App/Models/User";
 
 export default class UsersController {
   async index({ request, response }) {
+<<<<<<< HEAD
     const users = await  Database.from('users').select("*").where('age','>',18)
     return response.json({users});
+=======
+    await Database.insertQuery()
+      .table("users")
+      .insert({ username: "virk", email: "virk@adonisjs.com" });
+>>>>>>> b822623b010197517dac172015307f4d55061da1
   }
 
   async show({ params, request, response }) {}
