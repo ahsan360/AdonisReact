@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Form from './Form'
+import Form from "./Form";
+import Table from "./Table";
+import UserForm from "./UserForm";
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+  Navigate,
+} from "react-router-dom";
+import AddInfo from "./AddInfo";
+import Home from "./Home";
 function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const result = await axios.get("http://localhost:3333/api");
-      setData(result.data);
-    }
-    fetchData();
-  }, []);
-  console.log("data", data);
   return (
-    <div>
-      {/* {data.map((item) => (
-        <div key={item.id}>
-          <p>{item.name}</p>
-          <p>{item.description}</p>
-        </div>
-      ))} */}
-      <Form /> 
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/addinfo" element={<AddInfo />} />
+          <Route path="/showinfo" element={<Table />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

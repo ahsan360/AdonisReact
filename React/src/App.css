@@ -1,8 +1,19 @@
 #root {
+  display: flex;
+  flex-direction: column;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -39,4 +50,91 @@
 
 .read-the-docs {
   color: #888;
+}
+/* app.css */
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+/* Style the button that opens the form */
+button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: rgb(82, 55, 55);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Popup form container */
+.form-popup {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  width: 300px;
+  background-color: #ea1414;
+  border: 1px solid #080808;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for form container */
+.form-container {
+  width: 100%;
+}
+
+/* Close button in the form */
+.form-container .cancel {
+  background-color: #f44336; /* Red */
+}
+
+/* Style inputs and buttons */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+/* Hover styles */
+.btn:hover,
+.cancel:hover {
+  opacity: 0.8;
+}
+
+/* Display the form on click */
+.show {
+  display: flex;
+  flex-direction: column;
 }

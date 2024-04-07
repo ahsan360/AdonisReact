@@ -20,11 +20,12 @@ function App() {
       event.preventDefault(); 
 
     try {
-        const response = await axios.post(
-          "http://localhost:3333/projects",
-          formData
-        );
-        console.log(response)
+      console.log(formData);
+        // const response = await axios.post(
+        //   "http://localhost:3333/projects",
+        //   formData
+        // );
+        // console.log(response)
      
     } catch (error) {
       console.error(error);
