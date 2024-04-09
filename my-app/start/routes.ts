@@ -24,11 +24,8 @@ Route.get("/api", "DataController.index");
 Route.resource("projects", "ProjectsController");
 Route.resource("valid", "ValidationsController");
 Route.get("/getproject", "ProjectsController.getProject");
-Route.resource("testuser", "UsersController");
-<<<<<<< HEAD
-Route.resource("crud", "CrudsController");
-=======
->>>>>>> b822623b010197517dac172015307f4d55061da1
+Route.resource("testuser", "UsersController"); 
+Route.resource("crud", "CrudsController"); 
 
 Route.get("/te", () => "ge");
 
