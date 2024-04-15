@@ -1,7 +1,9 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import Database from "@ioc:Adonis/Lucid/Database";
+import Citizen from "App/Models/Citizen";
 import Comment from "App/Models/Comment";
+import Country from "App/Models/Country";
 import Fbpost from "App/Models/Fbpost";
 import Fbuser from "App/Models/Fbuser";
 import Post from "App/Models/Post";
@@ -10,10 +12,8 @@ import User from "App/Models/User";
 
 export default class UsersController {
   async index({ request, response }) {
-    const users = await Fbuser.query().preload('userPost',(postQuery)=>{
-        postQuery.preload("userLike");
-        postQuery.preload("userComments");
-    });
+    const key = 'today'
+    const users = await Fbpost.query().where('content', 'LIKE', `%${key}%`)
     return response.json({ users }); 
   }
 
@@ -24,8 +24,6 @@ export default class UsersController {
     const user = await User.create(data);
     return response.json({ data });
   }
-
-  async update({ params, request, response }) {}
-  async destroy({ params, request, response }) {}
-  async getProject({ params, request, response }) {}
+  async update({  params,  request,  response }) {}
+  async destroy({ params,  request,  response }) {}
 }

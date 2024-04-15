@@ -10,7 +10,7 @@ export default class extends BaseSchema {
       table.integer("post_id").unsigned().references("id").inTable("fbposts");
       table.string("content");
       table.timestamp("created_at", { useTz: true });
-      table.timestamp("updated_at", { useTz: true });
+      table.timestamp("updated_at").nullable();
     });
   }
 
